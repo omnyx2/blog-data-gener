@@ -107,6 +107,7 @@ class dataController {
 			const bookPublished = bookData.published;
 			const buildPost={
 				[lastPostId]:{
+					id: lastPostId,
 					headers,
 					content,
 					[postType]:{
@@ -119,6 +120,7 @@ class dataController {
 			}
 			const buildBook={
 				[lastBookId]:{
+					id: lastBookId,
 					title: bookData.title,
 					author: bookAuthor,
 					post: lastPostId,
@@ -134,6 +136,7 @@ class dataController {
 			if( theSerise === undefined ){
 				const seriseId = this.getLastIndexOfSerise();
 				const buildSerise = {
+						id: seriseId,
 						posts:[],
 						title:typeData.title,
 						author,
@@ -141,6 +144,7 @@ class dataController {
 					}
 				const buildPost={
 					[lastPostId]:{
+						id: lastPostId,
 						headers,
 						content,
 						[postType]:{
@@ -160,6 +164,7 @@ class dataController {
 				const seriseId = typeData.id;
 				const buildPost={
 					[lastPostId]:{
+						id:lastPostId,
 						headers,
 						content,
 						[postType]:{
@@ -178,6 +183,7 @@ class dataController {
 		} else {
 			const buildPost={
 				[lastPostId]:{
+					id: lastPostId,
 					headers,
 					content,
 				}
