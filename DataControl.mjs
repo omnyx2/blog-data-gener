@@ -14,9 +14,9 @@ var DATA_CENTER = {
 			"recent_post":{}	
 		}	
 	},
-	books:{},
-	serise:{},
-	posts:{}
+	books:[],
+	serise:[],
+	posts:[]
 };
 
 class dataController {
@@ -80,11 +80,11 @@ class dataController {
 			}
 		});
 		DATA_CENTER.users[userId].postings.push(id);
-		DATA_CENTER.posts[id]=post[id];
+		DATA_CENTER.posts.push(post[id]);
 	}
 	puttingBookInDb(bookData, userId, bookId){
 		DATA_CENTER.users[userId].books.push(bookData.post);
-		DATA_CENTER.books[bookId] = bookData;
+		DATA_CENTER.books.push(bookData);
 	}
 	puttingSeriseInDb(post,userId,seriseId,postId){
 		
@@ -150,7 +150,7 @@ class dataController {
 					}
 				}
 				
-				DATA_CENTER.serise[seriseId] = buildSerise;
+				DATA_CENTER.serise.push(buildSerise);
 				this.puttingPostInDb(buildPost,lastPostId,userId);
 				this.puttingSeriseInDb(buildPost,userId,seriseId,lastPostId);
 				
